@@ -14,16 +14,34 @@ body {
     color: #fff;
 }
 
-/* HEADER */
-header {
-    padding: 60px 20px;
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('foto6.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .logo {
-    width: 130px;
+    width: 100px;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 h1 {
@@ -31,13 +49,14 @@ h1 {
     margin: 10px 0;
 }
 
-p {
-    color: #aaa;
+.hero p {
+    color: #ccc;
 }
 
+/* BOTÃO */
 .btn {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 20px;
     padding: 14px 30px;
     background: #25D366;
     color: white;
@@ -60,6 +79,35 @@ section {
 
 h2 {
     margin-bottom: 30px;
+    text-align: center;
+}
+
+p {
+    color: #aaa;
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* GALERIA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.destaque {
+    grid-column: span 2;
 }
 
 /* SERVIÇOS */
@@ -84,28 +132,19 @@ h2 {
     color: #aaa;
 }
 
-/* GALERIA */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+/* LOGO SOBRE */
+.logo-sobre {
+    width: 90px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: block;
 }
 
-.gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.4s;
-}
-
-.gallery img:hover {
-    transform: scale(1.03);
-}
-
-/* FOTO DESTAQUE */
-.destaque {
-    grid-column: span 2;
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
 }
 
 /* RESPONSIVO */
@@ -118,36 +157,38 @@ h2 {
         grid-column: span 1;
     }
 }
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #777;
-}
 </style>
 </head>
 
 <body>
 
-<header>
-    <img src="logo.png" class="logo">
-    <h1>Breno Goularte</h1>
-    <p>Fotografia esportiva • Jogos • Atletas</p>
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-content">
+        <img src="logo.png" class="logo">
 
-    <a class="btn" href="https://wa.me/5551996516068" target="_blank">
-        Fale comigo no WhatsApp
-    </a>
-</header>
+        <h1>Breno Goularte</h1>
+        <p>Mais que fotos. Uma nova fase.</p>
 
+        <a class="btn" href="https://wa.me/5551996516068" target="_blank">
+            Fale comigo no WhatsApp
+        </a>
+    </div>
+</div>
+
+<!-- PORTFÓLIO -->
 <section>
-    <h2>Sobre mim</h2>
-    <p>
-        Sou fotógrafo esportivo especializado em capturar momentos decisivos,
-        emoção e intensidade dentro das quadras e campos.
-    </p>
+    <h2>Portfólio</h2>
+
+    <div class="gallery">
+        <img src="foto7.jpg" class="destaque">
+        <img src="foto9.jpg">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+    </div>
 </section>
 
+<!-- ÁREA DE ATUAÇÃO -->
 <section>
     <h2>Área de atuação</h2>
 
@@ -174,15 +215,25 @@ footer {
     </div>
 </section>
 
+<!-- SOBRE -->
 <section>
-    <h2>Trabalhos</h2>
+    <h2>Sobre mim</h2>
 
-    <div class="gallery">
-        <img src="foto7.jpg" class="destaque">
-        <img src="foto9.jpg">
-        <img src="foto2.jpg">
-        <img src="foto3.jpg">
-    </div>
+    <img src="logo.png" class="logo-sobre">
+
+    <p>
+        Sou fotógrafo esportivo especializado em capturar momentos decisivos,
+        emoção e intensidade dentro das quadras e campos.
+    </p>
+</section>
+
+<!-- CONTATO -->
+<section>
+    <h2>Contato</h2>
+
+    <a class="btn" href="https://wa.me/5551996516068" target="_blank">
+        Fale comigo no WhatsApp
+    </a>
 </section>
 
 <footer>
